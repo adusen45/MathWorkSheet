@@ -8,7 +8,7 @@ Public Class CommonFractionAsDecimal
         For i As UInteger = 1 To _instancesToGenerate
             returnList.Add(New CommonFractionAsDecimalProblem(numerator:=_randomizer.Next(minValue:=1, maxValue:=100), _
                                                               denominator:=_randomizer.Next(minValue:=2, maxValue:=100)))
-
+            Dim k = 0
         Next
 
         Return returnList
