@@ -1,0 +1,80 @@
+﻿<Window xmlns:PropertyGrid="clr-namespace:PropertyGrid;assembly=PropertyGrid"  x:Class="MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="MainView" SizeToContent="WidthAndHeight" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <GroupBox Header="Topic Areas">
+            
+                <StackPanel>
+                    <Button Content="Convert To Binary" Margin="3" Click="Button_Click"/>
+                    <Button Content="Convert From Binary" Margin="3" Click="Button_Click_1"/>
+                        
+                    <Button Content="-----------" Margin="3" />
+                    <Button Content="-----------" Margin="3" />
+                    <Button Content="-----------" Margin="3" />
+                    <Button Content="-----------" Margin="3" />
+                    
+                </StackPanel>
+            
+            </GroupBox>
+
+            <GroupBox Header="Containers">
+
+                <StackPanel>
+                    <Button Content="MultiChoice Question" Margin="3" />
+
+                    <Button Content="Single Topic List" Margin="3" Click="Button_Click_2"/>
+                    <Button Content="Multi Topic List" Margin="3" Click="Button_Click_4" />
+
+                </StackPanel>
+
+            </GroupBox>
+
+        </StackPanel>
+        
+
+        <ListBox Grid.Row="0" Grid.Column="1" Width="200" Height="300"
+                 Name="lstQuestionClasses" ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True">
+
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}" />
+                        <TextBlock>
+                            <Run Text="  X" />
+                            <TextBlock Text="{Binding InstancesToGenerate}" />
+                        </TextBlock>
+
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+        </ListBox>
+
+        <Button Grid.Row="1" Grid.Column="1"
+            Content="Generate WorkSheet" Click="Button_Click_3"/>
+
+        <GroupBox Header="Properties"
+                  Grid.Row="0" Grid.Column="2" Width="Auto">
+
+            <PropertyGrid:PropertyGridControl x:Name="pGrid"  VerticalAlignment="Top" HorizontalAlignment="Center"
+                                               DataContext="{Binding Path=/}"/>
+            
+        </GroupBox>
+
+    </Grid>
+</Window>

@@ -1,0 +1,30 @@
+﻿<Window xmlns:PropertyGrid="clr-namespace:PropertyGrid"  x:Class="AddStandardItemsDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="AddStandardItemsDialog" SizeToContent="WidthAndHeight">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            
+        </Grid.ColumnDefinitions>
+
+        <ListBox Name="lstSimpleControls" Grid.Row="0" Grid.Column="0" Width="200" Height="300"
+                 IsSynchronizedWithCurrentItem="True"/>
+        
+        <PropertyGrid:PropertyGridControl Grid.Row="0" Grid.Column="1" x:Name="pGrid" VerticalAlignment="Top"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" FlowDirection="RightToLeft">
+            <Button Content="Cancel" Width="50" Margin="2" Click="Button_Click_1" />
+            <Button Content="OK" Width="50" Margin="2" Click="Button_Click"/>
+
+        </StackPanel>
+
+    </Grid>
+</Window>

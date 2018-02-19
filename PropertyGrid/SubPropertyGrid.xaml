@@ -1,0 +1,18 @@
+﻿<UserControl xmlns:pg="clr-namespace:PropertyGrid" x:Class="SubPropertyGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" Loaded="UserControl_Loaded">
+    <GroupBox Name="grpPropertyName" Header="{Binding Path=Name}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="*" />
+
+            </Grid.ColumnDefinitions>
+
+            <pg:PropertyGridControl x:Name="pGrid" Grid.Column="1" DataContext="{Binding Path=Accessor}"/>
+
+        </Grid>
+    </GroupBox>
+</UserControl>

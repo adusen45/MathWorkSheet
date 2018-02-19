@@ -1,0 +1,87 @@
+﻿<Window xmlns:PropertyGrid="clr-namespace:PropertyGrid"  x:Class="NewObjectDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="CreateObjectDialog" SizeToContent="WidthAndHeight">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            
+        </Grid.RowDefinitions>
+        
+        <PropertyGrid:PropertyGridControl Grid.Row="0" x:Name="pGrid"/>
+        
+        <StackPanel Grid.Row="1" Orientation="Horizontal" FlowDirection="RightToLeft">
+            <Button Content="Cancel" Width="50" Margin="2" Click="Button_Click_1" />
+            <Button Content="OK" Width="50" Margin="2" Click="Button_Click"/>
+                       
+        </StackPanel>
+        
+    </Grid>
+</Window>
+
+
+
+
+<!--<Window xmlns:PropertyGrid="clr-namespace:PropertyGrid;assembly=PropertyGrid"  x:Class="EditCollectionDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="EditCollectionDialog" SizeToContent="WidthAndHeight">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Header="Topic Areas" Grid.Row="0" Grid.Column="0">
+
+            <ListBox>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Button Content="{Binding}" Tag="{Binding}" Click="Button_Click"/>
+
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </GroupBox>
+
+        <ListBox Grid.Row="0" Grid.Column="1" Width="200" Height="300"
+                 Name="lstQuestionClasses" ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True">
+
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding InstancesToGenerate}" />
+                        <TextBlock Text="{Binding Problem}" />
+
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+        </ListBox>
+
+        <GroupBox Header="Properties"
+                  Grid.Row="0" Grid.Column="2" Width="Auto">
+
+            <PropertyGrid:PropertyGridControl x:Name="pGrid"  VerticalAlignment="Top" HorizontalAlignment="Center"
+                                               DataContext="{Binding Path=/}"/>
+
+        </GroupBox>
+
+        <StackPanel Grid.Row="1"  Grid.ColumnSpan="3" Orientation="Horizontal" FlowDirection="RightToLeft">
+            <Button Content="Cancel" Width="50" Margin="2" Click="Button_Click_3" />
+            <Button Content="OK" Width="50" Margin="2" Click="Button_Click_2"/>
+
+        </StackPanel>
+
+    </Grid>
+</Window>-->
